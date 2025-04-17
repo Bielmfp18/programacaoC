@@ -1,4 +1,6 @@
-#define _CRT_SECURE_NO_WARNINGS
+//SUPER TRUNFO - Jogo de cartas
+
+#define _CRT_SECURE_NO_WARNINGS // Para evitar avisos de segurança do Visual Studio
 
 //Bibliotecas necessárias para a utilização dos comandos de entrada e saída ao decorrer do código.
 #include <stdio.h>
@@ -18,9 +20,13 @@ int main() {
     float area;
     float PIB;
     int num_pts_turisticos;
+    float densidade_populacional;
+	float pib_per_capita;
 
 
-    //Exibição dos dados da Carta 2//
+
+    //Exibição dos dados da Carta 1//
+
     system("cls"); //Serve para limpar a tela
     printf("Carta 1:\n\n");
 
@@ -53,7 +59,7 @@ int main() {
     system("cls");
     printf("Carta 1:\n\n");
 
-    //Ýrea
+    //Área
     printf("Digite a area da sua cidade: ");
     scanf("%f", &area);
 
@@ -74,6 +80,14 @@ int main() {
     // Limpa a tela antes de mostrar os dados finais
     system("cls");
 
+
+    //Definindo os valores de PIB e população da Carta 1
+
+    pib_per_capita = PIB / populacao; //Para calcular o PIB per capita
+
+    densidade_populacional = populacao / area; //Para calcular a densidade populacional
+
+
     ////////////////////////////////////////////////////////////////////////////////////////
 
 	//Variáveis para armazenar os dados da Carta 2
@@ -84,6 +98,8 @@ int main() {
     float area2;
     float PIB2;
     int num_pts_turisticos2;
+    float densidade_populacional2;
+    float pib_per_capita2;
 
 
 	//Exibição dos dados da Carta 2//
@@ -114,13 +130,13 @@ int main() {
     printf("Carta 2:\n\n");
 
     //Número da População
-    printf("Digite o número da populacao de sua cidade: ");
+    printf("Digite o numero da populacao de sua cidade: ");
     scanf("%d", &populacao2);
 
     system("cls");
     printf("Carta 2:\n\n");
 
-    //Ýrea
+    //Área
     printf("Digite a area da sua cidade: ");
     scanf("%f", &area2);
 
@@ -138,12 +154,16 @@ int main() {
     printf("Digite o numero de pontos turisticos da sua cidade: ");
     scanf("%d", &num_pts_turisticos2);
 
-    //////////////////////////////////////////////////////////////////////////////////////////////////
-
-
     // Limpa a tela antes de mostrar os dados finais
     system("cls");
 
+    //Definindo os valores de PIB e população da Carta 2
+
+    pib_per_capita2 = PIB2 / populacao2; //Para calcular o PIB per capita
+
+    densidade_populacional2 = populacao2 / area2; //Para calcular a densidade populacional
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////
 
     //Exibição dos dados da Carta 1
     printf("Dados da Carta 1:\n\n");
@@ -154,19 +174,24 @@ int main() {
     printf("Area: %.2f km²\n\n ", area);
     printf("PIB: R$ %.2f\n\n", PIB);
     printf("Numero de Pontos Turisticos: %d\n\n", num_pts_turisticos);
+	printf("Densidade Populacional: %.2f habitantes/km²\n\n", densidade_populacional);
+    printf("PIB per capita: R$ %.2f \n\n", pib_per_capita );
 
 	printf("===================================================================\n\n");
 
-    //Exibição dos dados da Carta 1
+    //Exibição dos dados da Carta 2
     printf("Dados da Carta 2:\n\n");
     printf("Estado: %c\n\n", estado2);
     printf("Codigo do Estado: %s\n\n", cod_carta2);
     printf("Nome da Cidade: %s\n", nome_cidade2);
     printf("Populacao: %d\n\n", populacao2);
     printf("Area: %.2f km²\n\n ", area2);
-    printf("PIB: R$ %.2f\n\n", PIB2);
+    printf("PIB: %.2f\n\n", PIB2);
     printf("Numero de Pontos Turisticos: %d\n\n", num_pts_turisticos2);
+    printf("Densidade Populacional: %.2f habitantes/km²\n\n", densidade_populacional2);
+    printf("PIB per capita: R$ %.2f \n\n", pib_per_capita2);
 
 
     return 0;
 }
+
