@@ -66,7 +66,7 @@ int main()
             printf("Pressione a tecla Enter para voltar ao menu principal...\n\n");
             getchar(); // Espera o usuário pressionar uma tecla
             getchar(); // Limpa o buffer de entrada
-            continue;
+            continue; // O continue faz com que o loop continue, voltando ao menu inicial
         case 3:
             system("cls"); // Limpa a tela antes de sair
             printf("Saindo do jogo...\n\n");
