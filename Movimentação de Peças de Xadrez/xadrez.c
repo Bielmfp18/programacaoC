@@ -63,12 +63,12 @@ int main() {
 
 // ----- Implementações recursivas -----
 
-void torre_recursiva(int casas_restantes, int etapa) {
+void torre_recursiva(int casas_restantes, int *etapa) {
     if (casas_restantes <= 0) {
-        printf("Torre: movimento completo em %d passos.\n", etapa - 1);
+        printf("Torre: movimento completo em %d passos.\n", *etapa - 1);
         return;
     }
-    printf("Passo %d: Direita (falta %d casas)\n", (etapa)++, casas_restantes - 1);
+    printf("Passo %d: Direita (falta %d casas)\n", (*etapa)++, casas_restantes - 1);
     torre_recursiva(casas_restantes - 1, etapa);
 }
 
@@ -78,19 +78,19 @@ void bispo_diagonal(int diagonais_restantes, int *etapa) {
         return;
     }
     // Loop vertical/horizontal aninhado para um passo diagonal
-    for (int vert = 1; vert <= 1; vert++) {
-        for (int horiz = 1; horiz <= 1; horiz++) {
+    for (int vertical = 1; vertical <= 1; vertical++) {
+        for (int horizontal = 1; horizontal <= 1; horizontal++) {
             printf("Passo %d: Cima, Direita (restam %d)\n", (*etapa)++, diagonais_restantes - 1);
         }
     }
     bispo_diagonal(diagonais_restantes - 1, etapa);
 }
 
-void rainha_horizontal(int passos_restantes, int etapa) {
+void rainha_horizontal(int passos_restantes, int *etapa) {
     if (passos_restantes <= 0) {
-        printf("Rainha: atingiu o limite de %d passos.\n", etapa - 1);
+        printf("Rainha: atingiu o limite de %d passos.\n", *etapa - 1);
         return;
     }
-    printf("Passo %d: Esquerda (faltam %d)\n", (etapa)++, passos_restantes - 1);
+    printf("Passo %d: Esquerda (faltam %d)\n", (*etapa)++, passos_restantes - 1);
     rainha_horizontal(passos_restantes - 1, etapa);
 }
