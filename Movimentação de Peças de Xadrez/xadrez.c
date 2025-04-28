@@ -1,19 +1,19 @@
 // xadrez.c
 #define _CRT_SECURE_NO_WARNINGS // Evita avisos do Visual Studio
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h> // Biblioteca padrão de entrada e saída
+#include <stdlib.h> // Biblioteca padrão de alocação de memória
 
-// Funções recursivas
-void torre_recursiva(int casas_restantes, int *etapa);
+// Funções recursivas para movimentação das peças
+void torre_recursiva(int casas_restantes, int *etapa); // O * serve para declarar um ponteiro ou acessar/modificar o valor no endereço recebido; quem passa o endereço da variável na chamada da função é o &.
 void bispo_diagonal(int diagonais_restantes, int *etapa);
 void rainha_horizontal(int passos_restantes, int *etapa);
 
 int main()
 {
     // Quantidades de casas para cada peça
-    int qtdCasasTorre = 5;
-    int qtdDiagonaisBispo = 5;
-    int qtdPassosRainha = 8;
+    int qtdCasasTorre = 5; // quantidade de casas que a Torre pode percorrer
+    int qtdDiagonaisBispo = 5; // quantidade de diagonais que o Bispo pode percorrer
+    int qtdPassosRainha = 8; // quantidade de casas que a Rainha pode percorrer na horizontal
     int altoCavalo = 2;    // movimento vertical do Cavalo
     int direitaCavalo = 1; // movimento horizontal do Cavalo
 
@@ -70,7 +70,7 @@ int main()
 void torre_recursiva(int casas_restantes, int *etapa)
 {
     if (casas_restantes <= 0)
-    {
+    { 
         printf("Torre: movimento completo em %d passos.\n", *etapa - 1);
         return;
     }
